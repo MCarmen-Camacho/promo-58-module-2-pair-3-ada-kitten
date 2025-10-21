@@ -50,7 +50,9 @@ const kittenThree = `
             </p>
           </li>`;
 
-const jsBtnAdd = ``;
+const jsBtnAdd = document.querySelector(".js-btn-add");
+
+jsBtnAdd.addEventListener(`click`, (ev) => {});
 
 document.querySelector(".js-list").innerHTML = kittenOne;
 document.querySelector(".js-list").innerHTML += kittenTwo;
