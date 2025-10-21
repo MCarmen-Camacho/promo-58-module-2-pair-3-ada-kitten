@@ -40,7 +40,7 @@
     </header>
 
     <main>
-      <section class="new-form collapsed">
+      <section class="new-form collapsed js-new-form">
         <h2 class="title">¿Agregamos un nuevo gatito a Adalab?</h2>
         <form class="form">
           <input
@@ -51,7 +51,12 @@
           />
           <input class="input" type="text" placeholder="Nombre" required />
           <input class="input" type="text" placeholder="Raza" />
-          <input class="input" type="text" placeholder="Descripción" required />
+          <input
+            class="input js_in_search_desc"
+            type="text"
+            placeholder="Descripción"
+            required
+          />
           <button type="submit" class="button">Añadir</button>
           <button type="button" class="button-cancel">Cancelar</button>
         </form>
@@ -74,7 +79,7 @@
             id="raza"
           />
 
-          <button type="submit" class="button">Buscar</button>
+          <button type="submit" class="button js_button-search">Buscar</button>
         </form>
       </section>
 
