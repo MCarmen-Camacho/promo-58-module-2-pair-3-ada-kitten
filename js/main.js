@@ -62,27 +62,26 @@ btnAdd.addEventListener(`click`, (ev) => {
   sectionNewForm.classList.toggle("collapsed");
 });
 
-/*NO FUNCIONA!
 const btnCancel = document.querySelector(".js_btn_cancel");
 
-btnCancel.addEventListener(`click`, (ev) => {
-  sectionNewForm.classlist.toggle("collapsed");
+btnCancel.addEventListener("click", (ev) => {
+  sectionNewForm.classList.toggle("collapsed");
 });
-*/
 
-const buttonSearch = document.querySelector(".js_button-search");
-const inSearchDesc = document.querySelector(".js_in_search_desc");
+const searchButton = document.querySelector(".js_button-search");
+const descrSearchText = document.querySelector(".js_in_search_desc");
 
-buttonSearch.addEventListener("click", (ev) => {
+searchButton.addEventListener("click", (ev) => {
   ev.preventDefault();
-  const descrSearchText = inSearchDesc.value;
+  const descrValue = descrSearchText.value;
+  document.querySelector(".js-list").innerHTML = "";
+  if (kittenDesc1.includes(descrValue)) {
+    document.querySelector(".js-list").innerHTML = kittenOne;
+  }
+  if (kittenDesc2.includes(descrValue)) {
+    document.querySelector(".js-list").innerHTML += kittenTwo;
+  }
+  if (kittenDesc3.includes(descrValue)) {
+    document.querySelector(".js-list").innerHTML += kittenThree;
+  }
 });
-
-if (kittenDesc1.includes(descrSearchText)) {
-}
-
-if (kittenDesc2.includes(descrSearchText)) {
-}
-
-if (kittenDesc3.includes(descrSearchText)) {
-}
