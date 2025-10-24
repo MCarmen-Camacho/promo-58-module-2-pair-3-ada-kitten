@@ -1,5 +1,8 @@
 "use strict";
 
+const kittenDesc1 = `Porte elegante, su patrón de color tan característico y sus ojos
+                de un azul intenso, pero su historia se remonta a Asía al menos
+                hace 500 años, donde tuvo su origen muy posiblemente.`;
 const kittenOne = `
 <li class="card">
             <article>
@@ -10,13 +13,14 @@ const kittenOne = `
               />
               <h3 class="card_title">Anastacio</h3>
               <h4 class="card_race">Siamés</h4>
-              <p class="card_description">
-                Porte elegante, su patrón de color tan característico y sus ojos
-                de un azul intenso, pero su historia se remonta a Asía al menos
-                hace 500 años, donde tuvo su origen muy posiblemente.
+              <p class="card_description">${kittenDesc1}
               </p>
             </article>
           </li>`;
+
+const kittenDesc2 = `Produce fascinación y curiosidad. Exótico, raro, bello, extraño…
+              hasta con pinta de alienígena han llegado a definir a esta raza
+              gatuna que se caracteriza por la «ausencia» de pelo.`;
 
 const kittenTwo = `
 <li class="card">
@@ -27,13 +31,13 @@ const kittenTwo = `
             />
             <h3 class="card_title">Fiona</h3>
             <h4 class="card_race">Sphynx</h4>
-            <p class="card_description">
-              Produce fascinación y curiosidad. Exótico, raro, bello, extraño…
-              hasta con pinta de alienígena han llegado a definir a esta raza
-              gatuna que se caracteriza por la «ausencia» de pelo.
+            <p class="card_description">${kittenDesc2}
             </p>
           </li>`;
 
+const kittenDesc3 = `Tienen la cabeza cuadrada y los ojos simétricos, por lo que su
+              bella mirada se ha convertido en una de sus señas de identidad.
+              Sus ojos son grandes y las orejas resultan largas y en punta.`;
 const kittenThree = `
 <li class="card">
             <img
@@ -43,10 +47,7 @@ const kittenThree = `
             />
             <h3 class="card_title">Cielo</h3>
             <h4 class="card_race">Maine Coon</h4>
-            <p class="card_description">
-              Tienen la cabeza cuadrada y los ojos simétricos, por lo que su
-              bella mirada se ha convertido en una de sus señas de identidad.
-              Sus ojos son grandes y las orejas resultan largas y en punta.
+            <p class="card_description">${kittenDesc3}  
             </p>
           </li>`;
 
@@ -54,32 +55,34 @@ document.querySelector(".js-list").innerHTML = kittenOne;
 document.querySelector(".js-list").innerHTML += kittenTwo;
 document.querySelector(".js-list").innerHTML += kittenThree;
 
-const BtnAdd = document.querySelector(".js-btn-add");
-const buttonSearch = document.querySelector(".js_button-search");
-const inputDesc = document.querySelector(".js_in_search_desc");
+const btnAdd = document.querySelector(".js-btn-add");
+const sectionNewForm = document.querySelector(".js-new-form");
 
-BtnAdd.addEventListener(`click`, (ev) => {
-  const sectionNewForm = document.querySelector(".js-new-form");
+btnAdd.addEventListener(`click`, (ev) => {
   sectionNewForm.classList.toggle("collapsed");
 });
 
+/*NO FUNCIONA!
+const btnCancel = document.querySelector(".js_btn_cancel");
+
+btnCancel.addEventListener(`click`, (ev) => {
+  sectionNewForm.classlist.toggle("collapsed");
+});
+*/
+
+const buttonSearch = document.querySelector(".js_button-search");
+const inSearchDesc = document.querySelector(".js_in_search_desc");
+
 buttonSearch.addEventListener("click", (ev) => {
   ev.preventDefault();
-  const inputDesc = input_search_desc.value;
+  const descrSearchText = inSearchDesc.value;
 });
 
-const kittenDesc1 =
-  "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.";
-const kittenDesc2 =
-  "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
-const kittenDesc3 =
-  "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
-
-if (kittenDesc1.includes(inputDesc)) {
+if (kittenDesc1.includes(descrSearchText)) {
 }
 
-if (kittenDesc2.includes(inputDesc)) {
+if (kittenDesc2.includes(descrSearchText)) {
 }
 
-if (kittenDesc3.includes(inputDesc)) {
+if (kittenDesc3.includes(descrSearchText)) {
 }
