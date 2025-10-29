@@ -36,6 +36,40 @@ const kittenDataList = [kittenData1, kittenData2, kittenData3];
 const kittensUl = document.querySelector(".js-list");
 const searchButton = document.querySelector(".js_button-search");
 const descrSearchText = document.querySelector(".js_in_search_desc");
+/*
+kittensUl.innerHTML = kittenOne;
+kittensUl.innerHTML += kittenTwo;
+kittensUl.innerHTML += kittenThree;
+
+const kitten = kittenData3;
+*/
+
+function renderKittenList() {
+  for (const kitten of kittenDataList) {
+    const kittenHTML = `
+  <li class="card">
+              <article>
+                <img
+                  class="card_img"
+                  src=${kitten.image}
+                  alt="siames-cat"
+                />
+                <h3 class="card_title">${kitten.name}</h3>
+                <h4 class="card_race">${kitten.race}</h4>
+                <p class="card_description">${kitten.desc}
+                </p>
+              </article>
+            </li>`;
+
+    kittensUl.innerHTML += kittenHTML;
+  }
+}
+
+renderKittenList();
+
+//Iteramos sobre el listado de gatitos
+//Y por cada iteración pintamos un gatito.
+//utilizando la función renderKitten(kittenItem)
 
 // DATOS
 
@@ -47,7 +81,7 @@ const descrSearchText = document.querySelector(".js_in_search_desc");
                 hace 500 años, donde tuvo su origen muy posiblemente.`,
   race: "Siamés",
 };*/
-
+/*
 // Plantilla con el li de cada gato donde la rellenamos con los datos del gato 1 que proviene de un objeto.
 const kittenOne = `
 <li class="card">
@@ -89,7 +123,7 @@ const kittenThree = `
             <p class="card_description">${kittenDataList[2].desc}  
             </p>
           </li>`;
-
+*/
 // FUNCIONES
 
 // EVENTOS
@@ -114,10 +148,6 @@ searchButton.addEventListener("click", (ev) => {
 
 // Mostrar los gatitos
 // Pone los <li> dentro del <ul>
-
-kittensUl.innerHTML = kittenOne;
-kittensUl.innerHTML += kittenTwo;
-kittensUl.innerHTML += kittenThree;
 
 // ========================
 // FORMULARIO NUEVO GATITO
